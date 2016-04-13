@@ -1,0 +1,33 @@
+<dom-module id="list-of-cards">
+  <template>
+    <style>
+
+      paper-card {
+
+        width: 400px;
+        height: 300px;
+
+        --paper-card-header: {
+          background-color: mediumblue;
+          height: 75%;
+        }
+
+        --paper-card-header-color: white;
+      }
+
+      .container {
+        @apply(--layout-fit);
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+      }
+    </style>
+
+    <div class="container">
+      <paper-card heading="Card">
+        <div class="card-content">Lorem ipsum</div>
+      </paper-card>
+    </div>
+
+
+  </template>
+</dom-module>
