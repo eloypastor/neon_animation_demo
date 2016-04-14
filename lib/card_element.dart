@@ -1,6 +1,6 @@
-@HtmlImport('list_of_cards.html')
+@HtmlImport('card_element.html')
 
-library neon_animation_demo.lib.list_of_cards;
+library neon_animation_demo.lib.card_element;
 
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart' show HtmlImport;
@@ -19,11 +19,13 @@ import 'package:polymer_elements/iron_resizable_behavior.dart';
 /**
  * A Polymer list-of-cards element.
  */
-@PolymerRegister('list-of-cards')
-class ListOfCards extends PolymerElement with NeonAnimatableBehavior,IronResizableBehavior, AutonotifyBehavior, Observable
+@PolymerRegister('card-element')
+class CardElement extends PolymerElement with NeonAnimatableBehavior, AutonotifyBehavior, Observable
 {
 
-  @observable @property
+  @property String headerText;
+
+  @property
   Map get animationConfig => {
       'entry': [
         {
@@ -49,7 +51,7 @@ class ListOfCards extends PolymerElement with NeonAnimatableBehavior,IronResizab
 
 
   /// Constructor used to create instance of ListOfCards.
-  ListOfCards.created() : super.created();
+  CardElement.created() : super.created();
 
 }
 

@@ -9,16 +9,16 @@ import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart';
 import "package:autonotify_observe/autonotify_observe.dart";
-import 'package:neon_animation_demo/list_of_cards.dart';
+import 'package:neon_animation_demo/card_element.dart';
 import 'package:polymer_elements/paper_button.dart';
 import 'package:polymer_elements/neon_animated_pages.dart';
 
 
 
 @PolymerRegister('main-app')
-class MainApp extends PolymerElement {
+class MainApp extends PolymerElement with AutonotifyBehavior, Observable{
 
-  @property int selected = 0;
+  @observable @property int selected = 0;
 
   /// Constructor used to create instance of MainApp.
   MainApp.created() : super.created();
@@ -26,21 +26,7 @@ class MainApp extends PolymerElement {
   @reflectable
   btnClick(event, [_]) {
     NeonAnimatedPages animatedPages = this.querySelector('neon-animated-pages');
-
-    /* POLYMER TRANSFORMER */
-
-    if(selected == 0)
-      notifyPath('selected', 1);
-    else
-      notifyPath('selected', 0);
-
-
-    /* AUTONOTIFY_OBSERVE TRANSFORMER */
-
-    /*if(selected == 0)
-      selected =  1;
-    else
-      selected = 0;*/
+    animatedPages.selectNext();
   }
 
 }

@@ -15,7 +15,7 @@ dependencies:
   autonotify_observe: ^1.0.0-rc.10
 
 transformers:
-- polymer:
+- autonotify_observe:
     entry_points: web/index.html
 - $dart2js:
     minify: true
